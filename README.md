@@ -28,6 +28,7 @@ ss11/ex2/
 │   ├── main/java/com/example/ex11/Ex11Application.java
 │   └── test/java/com/example/ex11/Ex11ApplicationTests.java
 ├── build.gradle
+├── ci-ex2-ss11.png
 ├── gradlew
 ├── gradlew.bat
 ├── settings.gradle
@@ -90,15 +91,19 @@ jobs:
 
 ---
 
-## 5. Kết quả kiểm tra
+## 5. Kết quả kiểm tra trên GitHub Actions
 
-Sau khi đẩy commit lên nhánh `main`, luồng GitHub Actions chạy thành công:
-- Bước `./gradlew test` chạy qua toàn bộ test cases.
-- Bước `./gradlew bootJar` đóng gói thành công tệp `ex11-0.0.1-SNAPSHOT.jar`.
-- Bước `upload-artifact` tải tệp thành công lên GitHub Actions.
-- Trong phần **Summary** của Workflow Run:
-  - Xuất hiện mục **Artifacts** với tệp `app-jar.zip`.
-  - Có thể click tải trực tiếp về máy và kiểm tra chạy với `java -jar`.
+Ảnh chụp màn hình thực tế phần Summary trên tab Actions hiển thị Job **Run Unit Tests and Build JAR** hoàn thành và đính kèm Artifact thành công:
+
+![GitHub Actions Summary with Artifacts](ci-ex2-ss11.png)
+
+### Chi tiết kết quả:
+- **Trạng thái Job:** `Run Unit Tests and Build JAR` thành công (tích xanh) trong **33s**.
+- **Mục Artifacts:**
+  - Tên artifact: `app-jar`
+  - Dung lượng: `7.78 MB`
+  - Mã băm: `sha256:ff1f404bf20dc2a81dc1b24fe63039ffe0268e54...`
+  - Hỗ trợ tải trực tiếp tệp nén `app-jar.zip` về máy tính.
 
 ---
 
